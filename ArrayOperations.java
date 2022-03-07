@@ -78,28 +78,59 @@ arr[i]=Integer.parseInt(JOptionPane.showInputDialog("Enter Number "+(i+1)));
 });
 
 //2)Display Button
+
 Dis.addActionListener(new ActionListener()
 {
 String s1="";
-
 public void actionPerformed(ActionEvent ae)
 {
-StringBuilder sb = new StringBuilder();
-//StringBuilder s1 = new StringBuilder();
 for(int i=0;i<size;i++)
 {
-//s1= Integer.toString(arr[i]);
 s1 = s1+arr[i] + " ";
-//sb.append(screen1.s1.append(System.lineSeparator()));
 }
 JOptionPane.showMessageDialog(null,"Numbers are\n"+s1 ,"Result",JOptionPane.QUESTION_MESSAGE);
+s1="";
+}
 
+});
+
+//3)Insert Button
+
+Ins.addActionListener(new ActionListener()
+{
+int num=0;
+int pos=0;
+public void actionPerformed(ActionEvent ae)
+{
+num=Integer.parseInt(JOptionPane.showInputDialog("Enter Number you want to insert: "));
+do{
+pos=Integer.parseInt(JOptionPane.showInputDialog("Enter location where you want to insert number: "));
+System.out.println(size);
+if(pos<=0||pos>size+1)
+{
+JOptionPane.showMessageDialog(null,"Enter Valid Position","Error",JOptionPane.ERROR_MESSAGE);
+}
+}while(pos<=0||pos>size+1);
+
+if(pos-1==size)
+{
+arr[pos-1]=num;
+size++;
+}
+
+else
+{
+for(int i=size-1;i>=pos-1;i--)
+{
+arr[i+1]=arr[i];
+}
+arr[pos-1]=num;
+size++;
 }
 
 }
 
-);
-
+});
 
 
 
