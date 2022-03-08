@@ -196,7 +196,64 @@ JOptionPane.showMessageDialog(null,"Number not found ","Result",JOptionPane.QUES
 }
 });
 
+//7)MAX Button
 
+Max.addActionListener(new ActionListener()
+{
+public void actionPerformed(ActionEvent ae)
+{
+int max=arr[0];
+int pos=0;
+
+for(int i=0;i<size;i++)
+{
+if(max<arr[i])
+{
+max=arr[i];
+pos=i;
+}
+}
+JOptionPane.showMessageDialog(null,"Maximum Number is: "+max+" at location "+(pos+1),"Result",JOptionPane.QUESTION_MESSAGE);
+}
+});
+
+//8)MIN Button
+
+Min.addActionListener(new ActionListener()
+{
+public void actionPerformed(ActionEvent ae)
+{
+int min=arr[0];
+int pos=0;
+
+for(int i=0;i<size;i++)
+{
+if(min>arr[i])
+{
+min=arr[i];
+pos=i;
+}
+}
+JOptionPane.showMessageDialog(null,"Minimum Number is: "+min+" at location "+(pos+1),"Result",JOptionPane.QUESTION_MESSAGE);
+}
+});
+
+//9)Exit  Button
+
+Exit.addActionListener(new ActionListener()
+{
+public void actionPerformed(ActionEvent ae)
+{
+try {
+Thread.sleep(500);
+}
+catch (InterruptedException e) {
+e.printStackTrace();
+}
+JOptionPane.showMessageDialog(null,"Are you sure you want to Exit","Result",JOptionPane.QUESTION_MESSAGE);
+System.exit(0);
+}
+});
 
 
 
