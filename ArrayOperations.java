@@ -129,11 +129,72 @@ size++;
 }
 
 }
+});
 
+//4)Deletion Button
+
+Del.addActionListener(new ActionListener()
+{
+int pos=0;
+public void actionPerformed(ActionEvent ae)
+{
+do{
+pos=Integer.parseInt(JOptionPane.showInputDialog("Enter location where you want to delete number: "));
+//System.out.println(size);
+if(pos<=0||pos>size)
+{
+JOptionPane.showMessageDialog(null,"Enter Valid Position","Error",JOptionPane.ERROR_MESSAGE);
+}
+}while(pos<=0||pos>size);
+
+if(pos-1==size-1)
+{
+size--;
+}
+
+else
+{
+for(int i=pos-1;i<size-1;i++)
+{
+arr[i]=arr[i+1];
+}
+size--;
+}
+
+}
 });
 
 
+//5)Searching Button
 
+Sear.addActionListener(new ActionListener()
+{
+int num=0;
+int i=0;
+public void actionPerformed(ActionEvent ae)
+{
+boolean check=false;
+num=Integer.parseInt(JOptionPane.showInputDialog("Enter Number you want to Search: "));
+for(i=0;i<size;i++)
+{
+if(num==arr[i])
+{
+check=true;
+break;
+}
+}
+
+if(check)
+{
+JOptionPane.showMessageDialog(null,"Number found at Location: "+(i+1),"Result",JOptionPane.QUESTION_MESSAGE);
+}
+else
+{
+JOptionPane.showMessageDialog(null,"Number not found ","Result",JOptionPane.QUESTION_MESSAGE);
+}
+
+}
+});
 
 
 
