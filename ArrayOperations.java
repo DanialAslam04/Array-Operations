@@ -67,7 +67,6 @@ Store.addActionListener(new ActionListener()
 {
 public void actionPerformed(ActionEvent ae){
 size=Integer.parseInt(JOptionPane.showInputDialog("Enter how many total numbers are: "));
-System.out.println(size);
 
 for(int i=0;i<size;i++)
 {
@@ -195,6 +194,33 @@ JOptionPane.showMessageDialog(null,"Number not found ","Result",JOptionPane.QUES
 
 }
 });
+
+//6)MAX Button
+
+Sort.addActionListener(new ActionListener()
+{
+public void actionPerformed(ActionEvent ae)
+{
+int temp=0;
+for(int i=0;i<size;i++)
+{
+for(int j=0;j<size-1;j++)
+{
+if(arr[j]>arr[j+1])
+{
+temp=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=temp;
+}
+
+}
+
+}
+
+}
+});
+
+
 
 //7)MAX Button
 
