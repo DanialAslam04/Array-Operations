@@ -11,7 +11,7 @@ class screen1 {
   JButton Store, Dis, Ins, Del, Sear, Sort, Max, Min, Exit;
   JLabel l1;
   JLabel l2;
-  JLabel l3;
+//  JLabel l3;
 
 
   screen1() {
@@ -28,9 +28,6 @@ class screen1 {
     l2.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 14));
     l2.setForeground(new Color(0x00244f));
 
-   
-    l3.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 14));
-    l3.setForeground(new Color(0x00244f));
 
     //----------> Buttons
 
@@ -68,7 +65,7 @@ class screen1 {
     p.add(Box.createRigidArea(new Dimension(0, 85)));
     p.add(l2);
     p.add(Box.createRigidArea(new Dimension(0, 15)));
-    p.add(l3);
+//    p.add(l3);
 
     //----------> adding action listner to the buttons
 
