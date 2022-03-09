@@ -65,7 +65,7 @@ class screen1 {
     p.add(Box.createRigidArea(new Dimension(0, 85)));
     p.add(l2);
     p.add(Box.createRigidArea(new Dimension(0, 15)));
-//    p.add(l3);
+ //   p.add(l3);
 
     //----------> adding action listner to the buttons
 
@@ -73,8 +73,12 @@ class screen1 {
 
     Store.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ae) {
-        size = Integer.parseInt(JOptionPane.showInputDialog("Enter how many total numbers are: "));
-        flag = true;
+	do{
+	size = Integer.parseInt(JOptionPane.showInputDialog("Enter how many total numbers are: "));
+        if(size<=0||size>10)
+	JOptionPane.showMessageDialog(null,"Enter valid Size. It should be greater than 0 and less than or equal to 10","Error",JOptionPane.ERROR_MESSAGE);
+        }while(size<=0||size>10);
+	flag = true;
         for (int i = 0; i < size; i++) {
           arr[i] = Integer.parseInt(JOptionPane.showInputDialog("Enter Number " + (i + 1)));
         }
